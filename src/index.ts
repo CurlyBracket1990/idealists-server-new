@@ -49,11 +49,11 @@ const app = createExpressServer({
 });
 
 // Timer
-const job = new CronJob('0 */30 * * * *', function () {
-  const d = new Date();
-  console.log('Every 30 mins:', d);
-});
-job.start();
+// const job = new CronJob('0 */30 * * * *', function () {
+//   const d = new Date();
+//   console.log('Every 30 mins:', d);
+// });
+// job.start();
 
 setupDb()
   .then(_ =>
