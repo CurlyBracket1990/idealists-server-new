@@ -2,7 +2,7 @@ import "reflect-metadata"; // this shim is required
 import { createExpressServer, Action } from "routing-controllers";
 import setupDb from './db'
 import { verify } from './auth/jwt'
-import { CronJob } from 'cron'
+// import { CronJob } from 'cron'
 import UserController from './users/controller'
 import LoginController from "./auth/login";
 import SurveyController from "./surveys/controller";
