@@ -1,0 +1,1179 @@
+[
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-9195321-B2",
+    "passage": {
+      "text": "the keys towards the center of the keyboard 3410 are elevated higher than the keys towards the outer edges of the keyboard 3410. Elevating the keys in this manner provides additional ergonomic comfort so that the user's hands rest at an angle over the keys. The trackpad 3420 may internally include one or more clickable buttons such that when the trackpad 3420 is pressed a button is clicked.\nSome embodiments provide a touchscreen instead of the trackpad near the center of the keyboard. The touchscreen enables access to similar functions that could be accessed with the trackpad at the center. Additionally, the touchscreen provides visual information that could be used to further enhance user interface functionality. For example, the touchscreen may display the TEI viewer described in Section I above. In this manner, the user can invoke various output actions and perform text insertion without need for a separate input device (e.g., trackpad, mouse, etc.). For further flexibility, the keys",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 203.29573,
+      "number": "9195321",
+      "country": "US",
+      "position": 1,
+      "kind-code": "B2",
+      "family-number": 46828053,
+      "publication-date": "2015-11-24"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/033",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/02",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/023",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0485",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0489",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F21/31",
+          "main": "G06F21",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G09G5/08",
+          "main": "G09G5",
+          "type": "IPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "G06F3/04845",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0213",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/023",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/033",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04812",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0485",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04883",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04886",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04895",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04897",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F21/31",
+          "main": "G06F21",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G09G5/08",
+          "main": "G09G5",
+          "type": "CPC",
+          "group": "G09G"
+        }
+      ],
+      "title": [
+        {
+          "text": "Input device user interface enhancements",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "Some embodiments provide a device, method, system, computer program product and user interface for pointer movement analysis with modal continuous controller conversion. Specifically, some embodiments adapt movements issued from a mouse input device, trackpad, or touchscreen to adjust a position of a UI element. Some embodiments analyze a first set of movements and adapt a subsequent second set of movements to adjust the position of the UI element within a range of UI element positions when the first set of movements satisfies a movement threshold. The movement threshold includes a spiral pattern. In some embodiments, adjusting the position of the UI element includes performing scrolling within a scroll area based on the second set of movements when the first set of movements satisfies the spiral pattern.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        },
+        {
+          "name": "INTELLITACT LLC",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-9075462-B2",
+    "passage": {
+      "text": "for fine control of a graphical user interface. These input devices can interact with graphical user interfaces directly (e.g., when using a touchscreen) or indirectly (e.g., when using a touchpad or a mouse). A touchscreen or a trackpad may support multi-touch functions that include a touch sensing surface's (e.g., the touchscreen or trackpad) ability to recognize the presence of two or more points of contact with the surface.\nSUMMARY\nThe present disclosure relates to computer-implemented methods, systems, and devices for finger-specific input (e.g., each finger may be associated with specific commands). In a general aspect, a computer implemented method includes detecting a contact at an electronic device. A finger associated with the detected contact is identified. A finger-specific command associated with the contact from the identified finger is then determined and performed.\nThe foregoing and other implementations can each optionally include one or more of the following features:\nA",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 199.46066,
+      "number": "9075462",
+      "country": "US",
+      "position": 2,
+      "kind-code": "B2",
+      "family-number": 50880426,
+      "publication-date": "2015-07-07"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/041",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/041",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/0338",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/04808",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "Finger-specific input on touchscreen devices",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "This specification describes apparatus, computer-implemented methods, and systems for interacting with computing systems using finger-specific input. In one general embodiment, a finger-specific input device can identify and differentiate each finger of a user. For example, the finger-specific input device may be able to detect features of each individual finger, such as fingerprints or detectable finger attachments, and to determine a set of fingers using the input device by camera or other visual cue, among others. A user can use multiple fingers to interact with a computing system and generate commands based on the use of a particular finger, a particular combination of fingers, and particular gestures of specific finger or combination of finger movements. In some implementations, specific commands are assigned to corresponding fingers and/or finger-specific multi-touch gestures in a program environment. In some implementations, users can define specific commands for specific fingers and/or finger-specific multi-touch gestures.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "SAUER DIETMAR MICHAEL",
+          "country": "DE"
+        },
+        {
+          "name": "EIRICH ILONA",
+          "country": "DE"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "SAUER DIETMAR MICHAEL",
+          "country": "DE"
+        },
+        {
+          "name": "EIRICH ILONA",
+          "country": "DE"
+        },
+        {
+          "name": "SAP SE",
+          "country": "DE"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/EP-2712152-A1",
+    "passage": {
+      "text": "to the in vehicle system. As discussed above, the trackpad connection may be direct (i.e. that trackpad commands are passed to the in vehicle system which passes them back via the terminal mode connection to the mobile device operating system/app in use) or indirect (i.e. that the mobile device operating system/app in use receives the input and includes the result of the input to control the output provided to the in vehicle system by way of the replicated display.\n\n[0050]    The trackpad functionality can allow for a variety of inputs to be received via the touchscreen input of the mobile device. These can include single touch trackpad functions, such as scroll up/down for lists of music, contacts; and scroll left/right for volume; etc. These can also include \"flick\"' gestures, such as page scroll up/down or \"back\"/\"enter\" to select a function. These can also include multitouch trackpad functions, such as zoom in/out for map or image based functions. These could also include gesture or",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 191.10605,
+      "number": "2712152",
+      "country": "EP",
+      "position": 3,
+      "kind-code": "A1",
+      "family-number": 46888962,
+      "publication-date": "2014-03-26"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/14",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G09G5/00",
+          "main": "G09G5",
+          "type": "IPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "H04M1/60",
+          "main": "H04M1",
+          "type": "IPC",
+          "group": "H04M"
+        },
+        {
+          "sub": "H04N21/41",
+          "main": "H04N21",
+          "type": "IPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/422",
+          "main": "H04N21",
+          "type": "IPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/431",
+          "main": "H04N21",
+          "type": "IPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/4363",
+          "main": "H04N21",
+          "type": "IPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04M1/6075",
+          "main": "H04M1",
+          "type": "CPC",
+          "group": "H04M"
+        },
+        {
+          "sub": "G06F3/04886",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/1423",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G09G5/003",
+          "main": "G09G5",
+          "type": "CPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "G09G2370/22",
+          "main": "G09G2370",
+          "type": "CPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "G09G2380/10",
+          "main": "G09G2380",
+          "type": "CPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "H04M1/6083",
+          "main": "H04M1",
+          "type": "CPC",
+          "group": "H04M"
+        },
+        {
+          "sub": "H04M1/6091",
+          "main": "H04M1",
+          "type": "CPC",
+          "group": "H04M"
+        },
+        {
+          "sub": "H04M2250/22",
+          "main": "H04M2250",
+          "type": "CPC",
+          "group": "H04M"
+        },
+        {
+          "sub": "H04N21/4122",
+          "main": "H04N21",
+          "type": "CPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/4126",
+          "main": "H04N21",
+          "type": "CPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/42204",
+          "main": "H04N21",
+          "type": "CPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/4312",
+          "main": "H04N21",
+          "type": "CPC",
+          "group": "H04N"
+        },
+        {
+          "sub": "H04N21/43637",
+          "main": "H04N21",
+          "type": "CPC",
+          "group": "H04N"
+        }
+      ],
+      "title": [
+        {
+          "text": "Method and Device",
+          "format": "docdba",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "There can be provided a method for using a mobile device as an input device for a connected system. The method can comprise: connecting the mobile device to output visual content therefrom for display on a display of a connected system; and presenting on a display of the mobile device an input interface for control of said visual content from the mobile device displayed on the display of the connected device.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "ASHLEY JON",
+          "country": "GB"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "DENSO CORP",
+          "country": "JP"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-8933888-B2",
+    "passage": {
+      "text": "may be presented using a touchscreen tablet, touchscreen smartphone, or other touch sensitive display on an essentially horizontal plane that is synchronously coupled with the second UI that may be presented using a monitor or display device that may be placed farther from the user on an essentially vertical plane. Synchronously coupling the first UI to the second UI allows touch inputs issued using the first UI to produce change on the second UI.\nIt is further an objective of the present invention to define an apparatus, method, system, and computer software product that overcomes limitations and enhances the use of the human finger as a UI pointing device on touchscreen and trackpad devices. Specifically, some embodiments provide a precision pointing function that seamlessly operates with traditional trackpad and/or touchscreen functionality. The precision pointer includes a configurable magnified region to better present underlying on-screen content. The level of magnification adjusts",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 189.35666,
+      "number": "8933888",
+      "country": "US",
+      "position": 4,
+      "kind-code": "B2",
+      "family-number": 47506396,
+      "publication-date": "2015-01-13"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G09G5/00",
+          "main": "G09G5",
+          "type": "IPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "G06F3/02",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0481",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0489",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04812",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0482",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04842",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04883",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04886",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04895",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/04104",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "Relative touch user interface enhancements",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "Some embodiments provide a meta touch interface (MTI) with multiple position indicators with each position indicator operating as a separate pointing tool that can be activated (i) using taps on a touchpad or other touch sensitive surface or (ii) by pressing certain keyboard keys. The MT pointer allows for adjacent UI elements to be selected without having to reposition the MT pointer for each selection or activation. Some embodiments provide a multi-device UI that comprises at least two UIs, wherein the first UI is presented on an essentially horizontal plane that is aligned with operational focus and the second UI that is presented on an essentially vertical plane that is aligned with visual focus of the user. Some embodiments provide a precision pointer that includes an adjustable magnified region to better present underlying on-screen content, thereby allowing the user to more precisely position the pointer.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        },
+        {
+          "name": "INTELLITACT LLC",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/WO-2012170410-A1",
+    "passage": {
+      "text": "[0055] The bus 1105 also connects to the input and output devices 1130 and 1135. The input devices enable the user to communicate information and select commands to the computer system. The input devices 1130 include any of a capacitive touchscreen, resistive touchscreen, any other touchscreen technology, a trackpad that is part of the computing system 1100 or attached as a peripheral, a set of touch sensitive buttons or touch sensitive keys that are used to provide inputs to the computing system 1100, or any other touch sensing hardware that detects multiple touches and that is coupled to the computing system 1100 or is attached as a peripheral. The input device 1130 also include alphanumeric keypads (including physical keyboards and touchscreen keyboards), pointing devices (also called \"cursor control devices\"). The input devices 1130 also include audio input devices (e.g., microphones, MIDI musical instruments, etc.). The output devices 1135 display images generated by the computer system.",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 187.53484,
+      "number": "2012170410",
+      "country": "WO",
+      "position": 5,
+      "kind-code": "A1",
+      "family-number": 47296390,
+      "publication-date": "2012-12-13"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/02",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/038",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0213",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "KEYBOARD WITH INTEGRATED TOUCH SURFACE",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "Some embodiments provide a single integrated multi-functional input device (1) that provides the discrete input functionality of a keyboard to facilitate efficient text insertion operations and (2) that provides the functionality of a trackpad to facilitate efficient spatially dependent navigation in a graphical user interface (GUI) whereby each such functionality is accessible by the user's hands positioned at the home position keys of the keyboard. More specifically, some embodiments provide an enhanced keyboard with at least one touch sensitive key and software for adapting touches applied over the touch sensitive key to emulate trackpad functionality without interfering with regular text insertion (typing).",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "INTELLITACT LLC",
+          "country": "US"
+        },
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-8982069-B2",
+    "passage": {
+      "text": "and interact with the GUI.\nTrackpad usage is becoming more prevalent as these input devices are commonly included in addition to full keyboards on typical laptop computing systems. As shown in FIG. 1, a trackpad 110 is often included below a full keyboard on many laptop computing systems. Trackpad usage is also becoming more prevalent as advanced trackpad functionality enables more efficient and quicker access to alternate functionality. For example, a multi-touch trackpad allows one or more detected touches to select a GUI element, and movement of one or more detected touches to drag the selected GUI element.\nHowever efficient in the navigation of the GUI, the trackpad and other spatially dependent input devices are not ergonomically satisfactory nor reliably accurate when performing text insertion or typing operations. As a result, efficient usage of many computer systems remains dependent on at least two input devices: (1) the keyboard and (2) a spatially dependent input device such",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 187.48425,
+      "number": "8982069",
+      "country": "US",
+      "position": 6,
+      "kind-code": "B2",
+      "family-number": 46876922,
+      "publication-date": "2015-03-17"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/041",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/02",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0354",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0213",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/03547",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04883",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/04808",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "Keyboard with integrated touch surface",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "Some embodiments provide a single integrated multi-functional input device (1) that provides the discrete input functionality of a keyboard to facilitate efficient text insertion operations and (2) that provides the functionality of a trackpad to facilitate efficient spatially dependent navigation in a graphical user interface (GUI) whereby each such functionality is accessible by the user's hands positioned at the home position keys of the keyboard. More specifically, some embodiments provide an enhanced keyboard with at least one touch sensitive key and software for adapting touches applied over the touch sensitive key to emulate trackpad functionality without interfering with regular text insertion (typing).",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "LAUBACH KEVIN",
+          "country": "US"
+        },
+        {
+          "name": "INTELLITACT LLC",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-9058480-B2",
+    "passage": {
+      "text": "to the specific details set forth herein. In some instances, structures and components are shown in block diagram form in order to avoid obscuring the concepts of the subject technology.\nAs noted above, security for logging in to an electronic device is cumbersome, typically requiring the user to input a strong password that may be difficult to memorize. A device may be unlocked using defined location based gestures on an input interface (e.g., trackpad, touchscreen) of an electronic device. For example, a 3×3 grid of dots may be shown on a touch screen display of a smartphone for which a user may use a pattern of up/down/left/right gestures with a finger in order to unlock the smartphone, where each gesture conforms to discrete locations (e.g., from the uppermost left dot across to the uppermost right dot). For a trackpad based electronic device, a visual representation of a grid pattern is shown on the device display, increasing the possibility of another person seeing the unlock sequence",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 186.89778,
+      "number": "9058480",
+      "country": "US",
+      "position": 7,
+      "kind-code": "B2",
+      "family-number": 53008093,
+      "publication-date": "2015-06-16"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F21/00",
+          "main": "G06F21",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F21/36",
+          "main": "G06F21",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F21/36",
+          "main": "G06F21",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/011",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/03547",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04883",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/16",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F21/32",
+          "main": "G06F21",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/0381",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/04808",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2221/2105",
+          "main": "G06F2221",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2221/2147",
+          "main": "G06F2221",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "H04W12/06",
+          "main": "H04W12",
+          "type": "CPC",
+          "group": "H04W"
+        }
+      ],
+      "title": [
+        {
+          "text": "Directional touch unlocking for electronic devices",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "A system and machine-implemented method for matching input gestures on a touch interface to a security pattern to allow user access to an electronic device or account. The security pattern may correspond to a combination of linear and non-linear input gestures relating to directional changes of the input gestures. A determination of the security pattern may be based on the end motion and speed of each input gesture.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "KUSCHER ALEXANDER FRIEDRICH",
+          "country": "US"
+        },
+        {
+          "name": "WARR ANDREW",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "GOOGLE INC",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-2012026077-A1",
+    "passage": {
+      "text": "executed, cause one or more processors of a computing device to: receive, via a trackpad device coupled to the computing device, touch-based input comprising one or more gestures, wherein the trackpad device is physically distinct from a display device coupled to the computing device; determine a trackpad operation based upon the touch-based input; determine a touchscreen event based upon a mapping of the trackpad operation to the touchscreen event, wherein the touchscreen event is determined without receiving any user input from a touchscreen device; and generate the touchscreen event for processing by an application executing on the computing device, wherein the application is designed to process touchscreen events initiated by touchscreen devices.\nIn one example, a method includes receiving, via a trackpad device coupled to a computing device, touch-based input comprising one or more gestures, wherein the trackpad device is physically distinct from a display device coupled to the computing",
+      "section": "description",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 186.32216,
+      "number": "2012026077",
+      "country": "US",
+      "position": 8,
+      "kind-code": "A1",
+      "family-number": 44629539,
+      "publication-date": "2012-02-02"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G09G5/00",
+          "main": "G09G5",
+          "type": "IPC",
+          "group": "G09G"
+        },
+        {
+          "sub": "G06F3/038",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/041",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04883",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/03547",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/038",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0416",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F2203/04808",
+          "main": "G06F2203",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "MAPPING TRACKPAD OPERATIONS TO TOUCHSCREEN EVENTS",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "In general, this disclosure describes techniques for mapping trackpad interactions and operations to touchscreen events without the use of a touchscreen user interface. In one example, a method includes receiving, via a trackpad device coupled to a computing device, touch-based input comprising one or more gestures, wherein the trackpad device is physically distinct from a display device coupled to the computing device. The method further includes determining, by the computing device, a trackpad operation based upon the touch-based input, and determining, by the computing device, a touchscreen event based upon a mapping of the trackpad operation to the touchscreen event, wherein the touchscreen event is determined without receiving any user input from a touchscreen device. The method further includes generating, by the computing device, the touchscreen event for processing by an application executing on the computing device, wherein the application is designed to process touchscreen events initiated by touchscreen devices.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "HACKBORN DIANNE K",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "HACKBORN DIANNE K",
+          "country": "US"
+        },
+        {
+          "name": "GOOGLE INC",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-9830068-B2",
+    "passage": {
+      "text": "touch sensitive user interface display device detects whether the display housing and the base housing are in the open configuration or the closed configuration;\nbased on the detection, the transparent touch sensitive user interface display device interprets touches on the first touch screen interface as touches on a touchpad when the display housing and the base housing are in the open configuration, and interpret touches on the second touch screen interface as touches on a touchscreen when the display housing and the base housing are in the closed configuration;\nthe transparent display generates and displays a user interface in shape of a trackpad on a portion of the transparent display that is visible on a portion of the first touch screen interface when the display housing and the base housing are in the open configuration;\nthe first touch screen interface, receives the first touch input on the trackpad that is visible on the portion thereof when the display housing and the base housing",
+      "section": "claim",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 185.75047,
+      "number": "9830068",
+      "country": "US",
+      "position": 9,
+      "kind-code": "B2",
+      "family-number": 51021906,
+      "publication-date": "2017-11-28"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/048",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F1/16",
+          "main": "G06F1",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/041",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/14",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F1/1637",
+          "main": "G06F1",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F1/1643",
+          "main": "G06F1",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0416",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/1423",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "Dual configuration computer",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "In general, in one aspect, a laptop computer that maintains at least a subset of its operational capability (e.g., some display visibility, some user interface ability) in a closed configuration. The base includes a transparent surface to enable at least part of the display to be visible from the bottom when in the closed configuration. The transparent surface is touch sensitive to enable a touchscreen user interface with the display in the closed configuration and a touchpad user interface with the display in an open configuration. The transparent surface may display varying portions of the user interface device and possibly other images in the open configuration. The laptop computer may function as a tablet in the closed configuration.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "OAKLEY NICHOLAS W",
+          "country": "US"
+        },
+        {
+          "name": "LEW CHEE SOON",
+          "country": "MY"
+        },
+        {
+          "name": "SOON BIN YUN",
+          "country": "MY"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "INTEL CORP",
+          "country": "US"
+        }
+      ]
+    }
+  },
+  {
+    "pdf": "https://api.auto-match.se/v2/pdf/US-2018232093-A1",
+    "passage": {
+      "text": "bar of the touchscreen keyboard is based further on determining that the user palms are touching portions of the touchscreen keyboard on either side of the trackpad.\n\n\n\n19. The system of claim 14, wherein the touchscreen keyboard and the track pad are identified by outlines illustrated on a touch sensitive input device.\n\n\n20. A non-transitory computer-readable medium storing software comprising instructions executable by one or more computers which, upon such execution, cause the one or more computers to perform operations comprising:\ndetermining, by a computing device that includes a touchscreen keyboard and trackpad, a context of the computing device;\nreceiving touch input on the trackpad;\ndesignating, by the computing device and based on the previously-determined context of the computing device, the touch input on the trackpad to be a selection of a space bar of the touchscreen keyboard; and\nproviding, for output to a display of the computing device and based on the computing device",
+      "section": "claim",
+      "language": "en"
+    },
+    "relevance": {
+      "score": 185.08687,
+      "number": "2018232093",
+      "country": "US",
+      "position": 10,
+      "kind-code": "A1",
+      "family-number": 60269970,
+      "publication-date": "2018-08-16"
+    },
+    "bibliographic": {
+      "class": [
+        {
+          "sub": "G06F3/041",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/02",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0354",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0488",
+          "main": "G06F3",
+          "type": "IPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0416",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/02",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/03547",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0484",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04883",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/04886",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        },
+        {
+          "sub": "G06F3/0489",
+          "main": "G06F3",
+          "type": "CPC",
+          "group": "G06F"
+        }
+      ],
+      "title": [
+        {
+          "text": "DYNAMIC SPACE BAR",
+          "language": "en"
+        }
+      ],
+      "abstract": [
+        {
+          "text": "Methods, systems, and apparatus, including computer programs encoded on a computer storage medium, for implementing a dynamic space bar are disclosed. In one aspect, a method includes the actions of determining, by a computing device that includes a touchscreen keyboard and trackpad, a context of the computing device. The actions further include receiving touch input on the trackpad. The actions further include designating, by the computing device and based on the previously-determined context of the computing device, the touch input on the trackpad to be a selection of a space bar of the touchscreen keyboard. The actions further include providing, for output to a display of the computing device and based on the computing device having designated the touch input on the trackpad to be a selection of the space bar, an indication of the selection of the space bar.",
+          "language": "en"
+        }
+      ],
+      "inventor": [
+        {
+          "name": "ROBERTS-HOFFMAN KATIE LEAH",
+          "country": "US"
+        },
+        {
+          "name": "MOONEY CHARLES ZIMMER",
+          "country": "US"
+        }
+      ],
+      "applicant": [
+        {
+          "name": "GOOGLE INC",
+          "country": "US"
+        }
+      ]
+    }
+  }
+]
