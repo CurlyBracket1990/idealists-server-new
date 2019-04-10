@@ -5,6 +5,7 @@ import { verify } from './auth/jwt'
 // import { CronJob } from 'cron'
 import UserController from './users/controller'
 import LoginController from "./auth/login";
+import ResetPasswordController from "./auth/resetpass";
 import SurveyController from "./surveys/controller";
 import GroupController from "./groups/controller";
 import QuestionController from "./questions/controller";
@@ -20,6 +21,7 @@ const app = createExpressServer({
   controllers: [
     UserController,
     LoginController,
+    ResetPasswordController,
     SurveyController,
     GroupController,
     QuestionController,

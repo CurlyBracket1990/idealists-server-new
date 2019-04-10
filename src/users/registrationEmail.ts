@@ -2,7 +2,7 @@
 const nodemailer = require("nodemailer");
 
 // async..await is not allowed in global scope, must use a wrapper
-export default async function sendEmail(newUser) {
+export default async function sendEmail(user) {
 
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
@@ -23,7 +23,7 @@ export default async function sendEmail(newUser) {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"The Idealists" <support@the-idealists.com>', // sender address
-    to: newUser, // list of receivers
+    to: user, // list of receivers
     subject: "Registration with Idealists", // Subject line
     text: "Congratulation, you are now registered with Idealists", // plain text body
     html: "<b>Congratulation, you are now registered with Idealists</b>", // html body

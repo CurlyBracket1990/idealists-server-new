@@ -19,7 +19,7 @@ export default class UserController {
   @Authorized()
   @Get("/current")
   getCurrent(
-    @CurrentUser({ required: true }) userId: User, // Gets id of authorized user and adds it to event.user
+    @CurrentUser({ required: true }) userId: User, // Gets id of authorized user
   ) {
     return User.findOne(userId);
   }
@@ -34,8 +34,10 @@ export default class UserController {
     return entity.save()
   }
 
-  @Put("/users/:id")
-  async put(@Param("id") id: number,
+  @Put("/users")
+  async put(
+    // @Param("id") id: number,
+    @CurrentUser({ required: true }) id: User, // Gets id of authorized user
     @Body() update: Partial<User>
   ) {
     const user = await User.findOne(id)

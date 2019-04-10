@@ -19,6 +19,8 @@ export default class IdeaController {
     return Idea.find();
     // }
     // return Idea.find({ where: { user: userId } });
+    
+    // Ideas will be public or private in the future for public to evaluate/comment
   }
 
   @Get("/ideas/:id")
