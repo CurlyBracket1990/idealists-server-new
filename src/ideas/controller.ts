@@ -1,6 +1,7 @@
 import { JsonController, Get, Post, Put, Delete, Param, Body, NotFoundError, HttpCode, CurrentUser, } from 'routing-controllers'
 import Idea from './entity'
 import User from '../users/entity'
+import apiCheck from '../api/apiCheck';
 
 
 
@@ -30,9 +31,10 @@ export default class IdeaController {
     @Param("id") id: number
   ) {
     let idea = await Idea.findOne(id);
-    let idd = idea!.idea[4].answers[0].qAnswer
+    // let idd = idea!.idea[4].answers[0].qAnswer
 
-    return idd
+    apiCheck(idea)
+    // return apiCheck(idea)
   }
 
   @Get("/ideas/:id")

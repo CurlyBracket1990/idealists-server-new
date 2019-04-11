@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, OneToOne, AfterInsert } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import Idea from '../ideas/entity';
-import { apiCompareRequest } from '../emails/emailOptions';
-import sendEmail from '../emails/sendEmail';
+// import { apiCompareRequest } from '../emails/emailOptions';
+// import sendEmail from '../emails/sendEmail';
 import User from '../users/entity';
 // import User from '../users/entity';
 
@@ -28,6 +28,7 @@ export default class AutoMatch extends BaseEntity {
   @AfterInsert()
   async checkIdea() {
     const usr = await User.findOne(this.idea.user)
-    sendEmail(usr!.email, apiCompareRequest).catch(console.error)
+    console.log('MYUSERFROMAPI',usr)
+    // sendEmail(usr!.email, apiCompareRequest).catch(console.error)
   }
 }
