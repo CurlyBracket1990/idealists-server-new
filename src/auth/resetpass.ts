@@ -1,4 +1,4 @@
-import { JsonController, Post, Body, BadRequestError } from 'routing-controllers'
+import { JsonController, Post, Body, BadRequestError, HttpCode } from 'routing-controllers'
 import User from '../users/entity'
 import { IsEmail, } from 'class-validator'
 import { sign } from './jwt'
@@ -12,7 +12,7 @@ class AuthenticatePayload {
 
 @JsonController()
 export default class ResetPasswordController {
-
+  @HttpCode(200)
   @Post('/reset-password')
   async resetPassword(
     @Body() { email }: AuthenticatePayload
@@ -53,8 +53,8 @@ export default class ResetPasswordController {
       // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
       console.log(usr.firstName, jwt)
     }
-    console.log(user.firstName, jwt)
     sendEmail(user).catch(console.error);
+    return `Password reset link was sent to ${user.email}.`
   }
 
   // @Put("/reset-pwd/:token")

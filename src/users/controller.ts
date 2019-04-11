@@ -1,4 +1,4 @@
-import { JsonController, Get, Post, Put, Delete, Param, Body, NotFoundError, Authorized, CurrentUser } from 'routing-controllers'
+import { JsonController, Get, Post, Put, Delete, Param, Body, NotFoundError, Authorized, CurrentUser, HttpError } from 'routing-controllers'
 import User from './entity'
 
 @JsonController()
@@ -28,22 +28,27 @@ export default class UserController {
   async createUser(
     @Body() user: User
   ) {
-    const { password, ...rest } = user
-    const entity = User.create(rest)
-    await entity.setPassword(password)
-    return entity.save()
+    if (await User.findOne({ email: user.email })) throw new HttpError(409, 'User with this email already exists')
+    else {
+      const { password, ...rest } = user
+      const entity = User.create(rest)
+      await entity.setPassword(password)
+      return entity.save()
+    }
   }
 
+  @Authorized()
   @Put("/users")
   async put(
-    // @Param("id") id: number,
-    @CurrentUser({ required: true }) id: User, // Gets id of authorized user
+    @CurrentUser({ required: true }) userId: User, // Gets id of authorized user
     @Body() update: Partial<User>
   ) {
-    const user = await User.findOne(id)
-    if (!user) throw new NotFoundError('Cannot find page')
+    const user = await User.findOne(userId)
+    if (!user) throw new NotFoundError('Cannot find user')
 
-    return User.merge(user, update).save();
+    User.merge(user, update).save();
+    if (update.password) await user.setPassword(update.password)
+    return user.save();
   }
 
   @Delete("/users/:id")
