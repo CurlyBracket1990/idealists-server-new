@@ -8,7 +8,7 @@ export const ideaConfirmation = {
   plainBody: `Congratulation, we received your idea`, // plain text body
   htmlBody: `Congratulation, we received your idea`, // html body}
 }
-export const apiComparerequest = {
+export const apiCompareRequest = {
   subject: `Review your idea`, // Subject line
   plainBody: `Please review your idea with the results of the patent check`, // plain text body
   htmlBody: `Please review your idea with the results of the patent check`, // html body}

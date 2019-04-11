@@ -1,6 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, OneToOne} from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, OneToOne, AfterInsert} from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import Idea from '../ideas/entity';
+import { apiCompareRequest } from '../emails/emailOptions';
+import sendEmail from '../emails/sendEmail';
 // import User from '../users/entity';
 
 
@@ -21,5 +23,9 @@ export default class AutoMatch extends BaseEntity {
 
   @CreateDateColumn({ type: "timestamp" })
   createdAt: Date;
-
+  
+  @AfterInsert()
+  checkIdea() {
+    sendEmail(this.idea.user.email, apiCompareRequest).catch(console.error)
+  }
 }
