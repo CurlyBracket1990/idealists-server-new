@@ -6,6 +6,7 @@ import * as bcrypt from 'bcrypt'
 import Idea from '../ideas/entity';
 import Upload from '../files/entity';
 import sendEmail from '../emails/sendEmail'
+import { registrationEmail } from '../emails/emailOptions'
 
 export enum UserRole {
   ADMIN = "admin",
@@ -72,15 +73,9 @@ export default class User extends BaseEntity {
   @OneToMany(_type => Upload, uploads => uploads.user, { eager: true, nullable: true })
   uploads: Upload[];
 
-  registrationEmail = {
-    receivers: this.email, // list of receivers
-    subject: `Idealists Registration`, // Subject line
-    plainBody: `Congratulation, you are now registered with Idealists`, // plain text body
-    htmlBody: `Congratulation, you are now registered with Idealists`, // html body}
-  }
 
   @AfterInsert()
   sendEmail() {
-    sendEmail(this.registrationEmail).catch(console.error)
+    sendEmail(this.email, registrationEmail).catch(console.error)
   }
 }
