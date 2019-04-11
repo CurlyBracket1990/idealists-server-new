@@ -25,8 +25,9 @@ export default class Idea extends BaseEntity {
   createdAt: Date;
 
   @AfterInsert()
-  checkIdea() {
+  async checkIdea() {
     apiCheck(this.idea)
-    sendEmail(this.user.email, ideaConfirmation).catch(console.error)
+    const usr = await User.findOne(this.user)
+    sendEmail(usr!.email, ideaConfirmation).catch(console.error)
   }
 }
