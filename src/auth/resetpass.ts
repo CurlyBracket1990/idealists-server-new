@@ -56,15 +56,4 @@ export default class ResetPasswordController {
     sendEmail(user).catch(console.error);
     return `Password reset link was sent to ${user.email}.`
   }
-
-  // @Put("/reset-pwd/:token")
-  // async reset(@Param("token") token: verify(),
-
-  //   @Body() update: Partial<User>
-  // ) {
-  //   const user = await User.findOne(id)
-  //   if (!user) throw new NotFoundError('Cannot find user')
-
-  //   return User.merge(user, update).save();
-  // }
 }

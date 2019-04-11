@@ -3,6 +3,8 @@ import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
 import apiCheck from '../api/apiCheck';
+import sendEmail from '../users/registrationEmail';
+
 
 
 @Entity()
@@ -24,5 +26,6 @@ export default class Idea extends BaseEntity {
   @AfterInsert()
   checkIdea() {
     apiCheck(this.idea)
+    sendEmail(this.user.email).catch(console.error)
   }
 }

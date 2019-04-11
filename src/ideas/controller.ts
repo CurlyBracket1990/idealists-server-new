@@ -1,4 +1,4 @@
-import { JsonController, Get, Post, Put, Delete, Param, Body, NotFoundError, HttpCode, CurrentUser } from 'routing-controllers'
+import { JsonController, Get, Post, Put, Delete, Param, Body, NotFoundError, HttpCode, CurrentUser,  } from 'routing-controllers'
 import Idea from './entity'
 import User from '../users/entity';
 
@@ -7,18 +7,18 @@ export default class IdeaController {
 
   @Get("/ideas")
   async getAll(
-    // @CurrentUser({ required: true }) userId: User
+    @CurrentUser({ required: true }) userId: User
   ) {
-    // const usr = await User.findOne(userId)
+    const usr = await User.findOne(userId)
 
-    // if (!usr) throw new NotFoundError('Cannot find user')
-    // if (usr.role === 'expert') {
-    // return Idea.find();
-    // }
-    // if (usr.role === 'admin') {
+    if (!usr) throw new NotFoundError('Cannot find user')
+    if (usr.role === 'expert') {
     return Idea.find();
-    // }
-    // return Idea.find({ where: { user: userId } });
+    }
+    if (usr.role === 'admin') {
+    return Idea.find();
+    }
+    return Idea.find({ where: { user: userId } });
     
     // Ideas will be public or private in the future for public to evaluate/comment
   }

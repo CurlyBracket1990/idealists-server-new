@@ -5,8 +5,7 @@ import { Exclude } from 'class-transformer'
 import * as bcrypt from 'bcrypt'
 import Idea from '../ideas/entity';
 import Upload from '../files/entity';
-import sendEmail from './registrationEmail';
-
+import sendEmail from '../emails/sendEmail'
 
 export enum UserRole {
   ADMIN = "admin",
@@ -25,6 +24,7 @@ export default class User extends BaseEntity {
   checkPassword(rawPassword: string): Promise<boolean> {
     return bcrypt.compare(rawPassword, this.password)
   }
+
 
   @PrimaryGeneratedColumn()
   id?: number
@@ -72,9 +72,15 @@ export default class User extends BaseEntity {
   @OneToMany(_type => Upload, uploads => uploads.user, { eager: true, nullable: true })
   uploads: Upload[];
 
-  @AfterInsert()
-  sendEmail() {
-    sendEmail(this.email).catch(console.error)
+  registrationEmail = {
+    receivers: this.email, // list of receivers
+    subject: `Idealists Registration`, // Subject line
+    plainBody: `Congratulation, you are now registered with Idealists`, // plain text body
+    htmlBody: `Congratulation, you are now registered with Idealists`, // html body}
   }
 
+  @AfterInsert()
+  sendEmail() {
+    sendEmail(this.registrationEmail).catch(console.error)
+  }
 }
