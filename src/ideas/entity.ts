@@ -3,8 +3,8 @@ import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
 import apiCheck from '../api/apiCheck';
-import sendEmail from '../emails/sendEmail';
-import { ideaConfirmation } from '../emails/emailOptions';
+// import sendEmail from '../emails/sendEmail';
+// import { ideaConfirmation } from '../emails/emailOptions';
 
 
 
@@ -27,7 +27,7 @@ export default class Idea extends BaseEntity {
   @AfterInsert()
   async checkIdea() {
     apiCheck(this.idea)
-    const usr = await User.findOne(this.user)
-    sendEmail(usr!.email, ideaConfirmation).catch(console.error)
+    // const usr = await User.findOne(this.user)
+    // sendEmail(usr!.email, ideaConfirmation).catch(console.error)
   }
 }
