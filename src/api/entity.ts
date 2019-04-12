@@ -16,7 +16,7 @@ export default class AutoMatch extends BaseEntity {
   @Column('jsonb', { nullable: true })
   autoMatch: JSON
 
-  @OneToOne(_type => Idea, { eager: true })
+  @OneToOne(_type => Idea)
   idea: Idea
 
   // @ManyToOne(_type => User, user => user.api)

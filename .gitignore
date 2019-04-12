@@ -9,6 +9,8 @@ uploads
 AUTOMATCH.md
 idea.ts
 automatch.json
+.bashrc
+.env
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
