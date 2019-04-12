@@ -67,7 +67,7 @@ export default class User extends BaseEntity {
   @CreateDateColumn({ type: "timestamp" })
   createdAt: Date;
 
-  @OneToMany(_type => Idea, ideas => ideas.user, { eager: true, nullable: true })
+  @OneToMany(_type => Idea, ideas => ideas.user, { eager: true, nullable: true, onDelete: 'CASCADE', })
   ideas: Idea[];
 
   @OneToMany(_type => Upload, uploads => uploads.user, { eager: true, nullable: true })

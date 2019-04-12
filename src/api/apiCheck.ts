@@ -16,7 +16,7 @@ export default async function apiCheck(object) {
   const entry = new AutoMatch
   request
     .get('https://39631edd-e73e-426e-8ee5-524a923295b1.mock.pstmn.io/v2.1/search?ticket=495fdecd03dbec28ed86fa8cb40758ae')
-    // .auth( ... ) // API key
+    .auth(process.env.AUTOMATCH_AUTH) // API key
     .send(json)
     .set('Content-Type', 'application/json')
     .then(response => {
