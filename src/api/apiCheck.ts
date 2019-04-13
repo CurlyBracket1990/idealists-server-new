@@ -29,24 +29,24 @@ export default async function apiCheck(object) {
 
   // Prepare JSON for AutoMatch
   const json = {
-    "query": "Technology which enables a trackpad or touchscreen to recognize more than one or more than two points of contact with the display.",// idd,
+    "query": "Technology which enables a trackpad or touchscreen to recognize more than one or more than two points of contact with the display.",
     "requested-hits": "10",
-    "view": "bibliographic,passage" // important 
+    "view": "bibliographic,passage" 
   }
-  console.log('MY JSOOOOONNN!!!', json)
+  // console.log('MY JSOOOOONNN!!!', json)
   // console.log('MY USR.ID!!!', idd)
-  console.log('MY USR!!!', usr.id)
+  // console.log('MY USR!!!', usr.id)
   request
-    .get('https://api.auto-match.se/v2.1/index')
-    // .post('https://api.auto-match.se/v2.1/search')
+    // .get('https://api.auto-match.se/v2.1/index')
+    .post('https://api.auto-match.se/v2.1/search')
     .set('Authorization', atmkey)
 
-    // .set(`reference-number:${usr.id}`)
-    // .set('Content-Type', 'application/json')
-    // .send(json)
+    .set(`reference-number:${usr.id}`)
+    .set('Content-Type', 'application/json')
+    .send(json)
     .then(response => {
       entry.autoMatch = response.body.data
-      console.log('MYENTRYINPROMISE!!', entry)
+      console.log('MY RESPONSEEE!!', response.body.data)
       return entry.save()
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']

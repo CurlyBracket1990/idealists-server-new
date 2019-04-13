@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, JoinColumn, } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
@@ -22,7 +22,8 @@ export default class Idea extends BaseEntity {
   @ManyToOne(_type => User, user => user.ideas, { eager: true })
   user: User;
 
-  @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true, eager:true })
+  @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true, eager: true })
+  @JoinColumn()
   autoMatch: AutoMatch;
 
   @CreateDateColumn({ type: "timestamp" })
