@@ -1,7 +1,7 @@
 import AutoMatch from "./entity";
 import Idea from "../ideas/entity";
 import { NotFoundError } from "routing-controllers";
-// import User from "../users/entity";
+import User from "../users/entity";
 
 
 const request = require('superagent');
@@ -12,10 +12,10 @@ export default async function apiCheck(object) {
   let idea = await Idea.findOne(object.id).catch(err => console.log(err))
   if (!idea) throw new NotFoundError('Cannot find idea')
 
-  // console.log('MY IDEA!!!', idea.user)
+  console.log('MY USERR!!!', idea.user)
   // Find the user
-  // const usr = await User.findOne({ where: idea.user }).catch(err => console.log(err))
-  // if (!usr) throw new NotFoundError('Cannot find user')
+  const usr = await User.findOne(idea.user.id).catch(err => console.log(err))
+  if (!usr) throw new NotFoundError('Cannot find user')
 
   // Extract relevant text from the idea
   // let idd = idea.idea[4].answers[0].qAnswer
@@ -44,13 +44,14 @@ export default async function apiCheck(object) {
     // .send(json)
     .then(response => {
       entry.autoMatch = response.body.data
-      return entry.save()
+      return entry
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )
     .then(rsp => console.log('Response from saving', rsp))
     .catch(error => console.log(error))
 
+  entry.save()
   const update = { autoMatch: entry }
   await Idea.merge(idea, update).save()
 
