@@ -12,9 +12,9 @@ export default async function apiCheck(object) {
   let idea = await Idea.findOne(object.id).catch(err => console.log(err))
   if (!idea) throw new NotFoundError('Cannot find idea')
 
-  console.log('MY IDEA!!!',idea.user )
+  console.log('MY IDEA!!!', idea)
   // Find the user
-  const usr = await User.findOne(idea.user).catch(err => console.log(err))
+  const usr = await User.findOne({ where: idea }).catch(err => console.log(err))
   if (!usr) throw new NotFoundError('Cannot find user')
 
   // Extract relevant text from the idea
@@ -33,7 +33,7 @@ export default async function apiCheck(object) {
   }
   console.log('MY JSOOOOONNN!!!', json)
   console.log('MY USR.ID!!!', usr.id)
-  console.log('MY USR!!!',usr )
+  console.log('MY USR!!!', usr)
   request
     .get('https://api.auto-match.se/v2.1/index')
     // .post('https://api.auto-match.se/v2.1/search')
@@ -43,14 +43,14 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      return entry.autoMatch = response.body.data
+      entry.autoMatch = response.body.data
+      return entry.save()
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )
     .then(rsp => console.log('Response from saving', rsp))
     .catch(error => console.log(error))
 
-  await entry.save()
   const update = { autoMatch: entry }
   await Idea.merge(idea, update).save()
 
