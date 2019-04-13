@@ -18,7 +18,7 @@ export default async function apiCheck(object) {
   // if (!usr) throw new NotFoundError('Cannot find user')
 
   // Extract relevant text from the idea
-  let idd = idea.idea[4].answers[0].qAnswer
+  // let idd = idea.idea[4].answers[0].qAnswer
 
   // Create new Automatch assign idea and user to it
   const entry = new AutoMatch
@@ -32,7 +32,7 @@ export default async function apiCheck(object) {
     "view": "bibliographic,passage" // important 
   }
   console.log('MY JSOOOOONNN!!!', json)
-  console.log('MY USR.ID!!!', idd)
+  // console.log('MY USR.ID!!!', idd)
   // console.log('MY USR!!!', usr)
   request
     .get('https://api.auto-match.se/v2.1/index')
