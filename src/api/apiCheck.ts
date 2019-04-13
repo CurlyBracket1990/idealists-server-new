@@ -12,6 +12,7 @@ export default async function apiCheck(object) {
   let idea = await Idea.findOne(object.id).catch(err => console.log(err))
   if (!idea) throw new NotFoundError('Cannot find idea')
 
+  console.log('MY IDEA!!!',idea.user )
   // Find the user
   const usr = await User.findOne(idea.user).catch(err => console.log(err))
   if (!usr) throw new NotFoundError('Cannot find user')
@@ -42,7 +43,7 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      entry.autoMatch = response.body.data
+      return entry.autoMatch = response.body.data
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )
