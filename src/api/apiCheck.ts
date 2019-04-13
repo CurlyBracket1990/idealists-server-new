@@ -22,7 +22,7 @@ export default async function apiCheck(object) {
 
   // Create new Automatch assign idea and user to it
   const entry = new AutoMatch
-  // entry.idea = object.id
+  entry.idea = object.id
   // entry.user = usr
 
   // Prepare JSON for AutoMatch
