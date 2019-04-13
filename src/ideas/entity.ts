@@ -23,7 +23,6 @@ export default class Idea extends BaseEntity {
   user: User;
 
   @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true })
-  @JoinColumn()
   autoMatch: AutoMatch;
 
   @CreateDateColumn({ type: "timestamp" })

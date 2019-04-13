@@ -35,13 +35,13 @@ export default async function apiCheck(object) {
   }
   console.log('MY JSOOOOONNN!!!', json)
   // console.log('MY USR.ID!!!', idd)
-  // console.log('MY USR!!!', usr)
+  console.log('MY USR!!!', usr.id)
   request
     .get('https://api.auto-match.se/v2.1/index')
     // .post('https://api.auto-match.se/v2.1/search')
     .set('Authorization', atmkey)
 
-    // .set(`reference-number:${entry.user.id}`)
+    // .set(`reference-number:${usr.id}`)
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
