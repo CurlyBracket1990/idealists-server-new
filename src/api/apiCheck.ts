@@ -30,7 +30,7 @@ export default async function apiCheck(object) {
     "view": "bibliographic,passage" // important 
   }
   console.log('MY JSOOOOONNN!!!', json)
-  console.log('MY USEERR!!!', entry.user.id)
+  console.log('MY USEERR!!!', usr.id)
   request
     .get('https://api.auto-match.se/v2.1/index')
     // .post('https://api.auto-match.se/v2.1/search')
@@ -40,7 +40,8 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      entry.ticket = response.body.data
+      console.log('RESPONSEEEEEE!!', response)
+      // entry.ticket = response.body.data
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )
