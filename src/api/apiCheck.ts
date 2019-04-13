@@ -4,6 +4,7 @@ import { NotFoundError } from "routing-controllers";
 import User from "../users/entity";
 
 const request = require('superagent');
+const atmkey = process.env.AUTOMATCH_AUTH
 
 export default async function apiCheck(object) {
   // Find an idea
@@ -28,14 +29,16 @@ export default async function apiCheck(object) {
     "requested-hits": "10",
     "view": "bibliographic,passage" // important 
   }
-  // console.log('MY JSOOOOONNN!!!', json)
-  // console.log('MY USEERR!!!', entry.user.id)
+  console.log('MY JSOOOOONNN!!!', json)
+  console.log('MY USEERR!!!', entry.user.id)
   request
-    .post('https://api.auto-match.se/v2.1/search')
-    .set(`Authorization=${process.env.AUTOMATCH_AUTH}`)
-    .set(`reference-number=${entry.user.id}`)
-    .set('Content-Type', 'application/json')
-    .send(json)
+    .get('https://api.auto-match.se/v2.1/index')
+    // .post('https://api.auto-match.se/v2.1/search')
+    // .set(`Authorization=${atmkey}`)
+    .Authorization(atmkey)
+    // .set(`reference-number:${entry.user.id}`)
+    // .set('Content-Type', 'application/json')
+    // .send(json)
     .then(response => {
       entry.ticket = response.body.data
     }
