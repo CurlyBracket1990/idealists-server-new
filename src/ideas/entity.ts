@@ -1,8 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, JoinColumn } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
-import apiCheck from '../api/apiCheck';
+import AutoMatch from '../api/entity';
+// import apiCheck from '../api/apiCheck';
 // import sendEmail from '../emails/sendEmail';
 // import { ideaConfirmation } from '../emails/emailOptions';
 
@@ -21,12 +22,16 @@ export default class Idea extends BaseEntity {
   @ManyToOne(_type => User, user => user.ideas)
   user: User;
 
+  @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true })
+  @JoinColumn()
+  autoMatch: AutoMatch;
+
   @CreateDateColumn({ type: "timestamp" })
   createdAt: Date;
 
   @AfterInsert()
   async checkIdea() {
-    apiCheck(this.idea)
+    // apiCheck(this.idea)
     // const usr = await User.findOne(this.user)
     // sendEmail(usr!.email, ideaConfirmation).catch(console.error)
   }

@@ -34,7 +34,7 @@ export default class IdeaController {
     // let idd = idea!.idea[4].answers[0].qAnswer
 
     apiCheck(idea)
-    // return apiCheck(idea)
+    return 'Doing API Check!'
   }
 
   @Get("/ideas/:id")
@@ -63,7 +63,7 @@ export default class IdeaController {
     const idea = await Idea.findOne(id)
     if (!idea) throw new NotFoundError('Cannot find page')
 
-    return Idea.merge(idea, update);
+    return Idea.merge(idea, update).save();
   }
 
   @Delete("/ideas/:id")

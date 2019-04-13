@@ -7,6 +7,7 @@ import Idea from '../ideas/entity';
 import Upload from '../files/entity';
 import sendEmail from '../emails/sendEmail'
 import { registrationEmail } from '../emails/emailOptions'
+import AutoMatch from '../api/entity';
 
 export enum UserRole {
   ADMIN = "admin",
@@ -67,10 +68,13 @@ export default class User extends BaseEntity {
   @CreateDateColumn({ type: "timestamp" })
   createdAt: Date;
 
-  @OneToMany(_type => Idea, ideas => ideas.user, { eager: true, nullable: true, onDelete: 'CASCADE', })
+  @OneToMany(_type => Idea, ideas => ideas.user, { nullable: true, onDelete: 'CASCADE', })
   ideas: Idea[];
 
-  @OneToMany(_type => Upload, uploads => uploads.user, { eager: true, nullable: true })
+  @OneToMany(_type => AutoMatch, autoMatch => autoMatch.user, { nullable: true, onDelete: 'CASCADE', })
+  autoMatch: AutoMatch[];
+
+  @OneToMany(_type => Upload, uploads => uploads.user, { nullable: true })
   uploads: Upload[];
 
 
