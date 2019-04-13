@@ -34,8 +34,8 @@ export default async function apiCheck(object) {
   request
     .get('https://api.auto-match.se/v2.1/index')
     // .post('https://api.auto-match.se/v2.1/search')
-    // .set(`Authorization=${atmkey}`)
-    .Authorization(atmkey)
+    .set('Authorization', atmkey)
+
     // .set(`reference-number:${entry.user.id}`)
     // .set('Content-Type', 'application/json')
     // .send(json)
