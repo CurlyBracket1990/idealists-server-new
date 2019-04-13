@@ -3,6 +3,7 @@ import Idea from "../ideas/entity";
 import { NotFoundError } from "routing-controllers";
 import User from "../users/entity";
 
+
 const request = require('superagent');
 const atmkey = process.env.AUTOMATCH_AUTH
 
@@ -30,7 +31,8 @@ export default async function apiCheck(object) {
     "view": "bibliographic,passage" // important 
   }
   console.log('MY JSOOOOONNN!!!', json)
-  console.log('MY USEERR!!!', usr.id)
+  console.log('MY USR.ID!!!', usr.id)
+  console.log('MY USR!!!',usr )
   request
     .get('https://api.auto-match.se/v2.1/index')
     // .post('https://api.auto-match.se/v2.1/search')
@@ -40,7 +42,7 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      entry.ticket = response.body.data
+      entry.autoMatch = response.body.data
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )

@@ -13,6 +13,8 @@ import IdeaController from "./ideas/controller";
 import UploadController from "./files/controller";
 import QuestController from "./quest/controller";
 import AutoMatchController from "./api/controller";
+require('dotenv').config()
+
 
 const port = process.env.PORT || 4000
 

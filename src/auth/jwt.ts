@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken'
 
-const secret = process.env.JWT_SECRET || '9u8nnjksfdt98*(&*%T$#hsfjk'
+const secret = process.env.JWT_SECRET
 const ttl = 3600 * 4 // our JWT tokens are valid for 4 hours
 
 interface JwtPayload {
@@ -8,7 +8,7 @@ interface JwtPayload {
 }
 
 export const sign = (data: JwtPayload) =>
-  jwt.sign({ data }, secret, { expiresIn: ttl })
+  jwt.sign({ data }, secret!, { expiresIn: ttl })
 
 export const verify = (token: string): { data: JwtPayload } =>
-  jwt.verify(token, secret) as { data: JwtPayload }
+  jwt.verify(token, secret!) as { data: JwtPayload }
