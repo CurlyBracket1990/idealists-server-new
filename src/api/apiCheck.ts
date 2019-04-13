@@ -40,7 +40,7 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      console.log('RESPONSEEEEEE!!', response)
+      console.log('RESPONSEEEEEE!!', response.body.data)
       // entry.ticket = response.body.data
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
