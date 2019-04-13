@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, JoinColumn, } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
