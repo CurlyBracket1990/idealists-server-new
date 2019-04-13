@@ -1,6 +1,6 @@
 import AutoMatch from "./entity";
-// import Idea from "../ideas/entity";
-// import { NotFoundError } from "routing-controllers";
+import Idea from "../ideas/entity";
+import { NotFoundError } from "routing-controllers";
 // import User from "../users/entity";
 
 
@@ -9,8 +9,8 @@ const atmkey = process.env.AUTOMATCH_AUTH
 
 export default async function apiCheck(object) {
   // Find an idea
-  // let idea = await Idea.findOne(object.id).catch(err => console.log(err))
-  // if (!idea) throw new NotFoundError('Cannot find idea')
+  let idea = await Idea.findOne(object.id).catch(err => console.log(err))
+  if (!idea) throw new NotFoundError('Cannot find idea')
 
   // console.log('MY IDEA!!!', idea.user)
   // Find the user
@@ -18,7 +18,7 @@ export default async function apiCheck(object) {
   // if (!usr) throw new NotFoundError('Cannot find user')
 
   // Extract relevant text from the idea
-  // let idd = idea.idea[4].answers[0].qAnswer
+  let idd = idea.idea[4].answers[0].qAnswer
 
   // Create new Automatch assign idea and user to it
   const entry = new AutoMatch
@@ -32,9 +32,8 @@ export default async function apiCheck(object) {
     "view": "bibliographic,passage" // important 
   }
   console.log('MY JSOOOOONNN!!!', json)
-  // console.log('MY USR.ID!!!', usr.id)
+  console.log('MY USR.ID!!!', idd)
   // console.log('MY USR!!!', usr)
-  console.log('MY OBJECT!!!', object)
   request
     .get('https://api.auto-match.se/v2.1/index')
     // .post('https://api.auto-match.se/v2.1/search')
@@ -52,7 +51,7 @@ export default async function apiCheck(object) {
     .then(rsp => console.log('Response from saving', rsp))
     .catch(error => console.log(error))
 
-  // const update = { autoMatch: entry }
-  // await Idea.merge(idea, update).save()
+  const update = { autoMatch: entry }
+  await Idea.merge(idea, update).save()
 
 }
