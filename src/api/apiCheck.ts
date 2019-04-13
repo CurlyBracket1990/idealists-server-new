@@ -9,10 +9,10 @@ const atmkey = process.env.AUTOMATCH_AUTH
 
 export default async function apiCheck(object) {
   // Find an idea
-  let idea = await Idea.findOne(object.id).catch(err => console.log(err))
+  const idea = await Idea.findOne(object.id).catch(err => console.log(err))
   if (!idea) throw new NotFoundError('Cannot find idea')
 
-  console.log('MY USERR!!!', idea.user)
+  // console.log('MY USERR!!!', idea.user)
   // Find the user
   const usr = await User.findOne(idea.user.id).catch(err => console.log(err))
   if (!usr) throw new NotFoundError('Cannot find user')
@@ -26,9 +26,6 @@ export default async function apiCheck(object) {
   entry.user = usr
 
 
-  entry.save()
-  const update = { autoMatch: entry }
-  await Idea.merge(idea, update).save()
 
   // Prepare JSON for AutoMatch
   const json = {
@@ -48,12 +45,18 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      const updte = { autoMatch: response.body.data }
-      return AutoMatch.merge(entry, updte).save()
+      entry.autoMatch = response.body.data
+      console.log('MYENTRYINPROMISE!!', entry)
+      return entry.save()
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )
-    .then(rsp => console.log('Response from saving', rsp))
+    .then(rsp => {
+      const update = { autoMatch: rsp }
+      console.log('RESPONSE FOR IDEA', rsp)
+      return Idea.merge(idea, update).save()
+
+    })
     .catch(error => console.log(error))
 
 
