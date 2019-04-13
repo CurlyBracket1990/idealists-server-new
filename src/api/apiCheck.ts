@@ -25,6 +25,11 @@ export default async function apiCheck(object) {
   entry.idea = idea
   entry.user = usr
 
+
+  entry.save()
+  const update = { autoMatch: entry }
+  await Idea.merge(idea, update).save()
+
   // Prepare JSON for AutoMatch
   const json = {
     "query": "Technology which enables a trackpad or touchscreen to recognize more than one or more than two points of contact with the display.",// idd,
@@ -43,16 +48,13 @@ export default async function apiCheck(object) {
     // .set('Content-Type', 'application/json')
     // .send(json)
     .then(response => {
-      entry.autoMatch = response.body.data
-      return entry
+      const updte = { autoMatch: response.body.data }
+      return AutoMatch.merge(entry, updte).save()
     }
       // entry.autoMatch = response.body.data['automatch-results']['index-1']
     )
     .then(rsp => console.log('Response from saving', rsp))
     .catch(error => console.log(error))
 
-  entry.save()
-  const update = { autoMatch: entry }
-  await Idea.merge(idea, update).save()
 
 }
