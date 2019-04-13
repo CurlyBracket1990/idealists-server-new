@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, JoinColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, JoinColumn, } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
@@ -19,7 +19,7 @@ export default class Idea extends BaseEntity {
   @Column('jsonb', { nullable: true })
   idea: JSON
 
-  @ManyToOne(_type => User, user => user.ideas)
+  @ManyToOne(_type => User, user => user.ideas, { eager: true })
   user: User;
 
   @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true })

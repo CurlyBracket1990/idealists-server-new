@@ -12,9 +12,9 @@ export default async function apiCheck(object) {
   let idea = await Idea.findOne(object.id).catch(err => console.log(err))
   if (!idea) throw new NotFoundError('Cannot find idea')
 
-  console.log('MY IDEA!!!', idea)
+  console.log('MY IDEA!!!', idea.user)
   // Find the user
-  const usr = await User.findOne({ where: idea }).catch(err => console.log(err))
+  const usr = await User.findOne({ where: idea.user }).catch(err => console.log(err))
   if (!usr) throw new NotFoundError('Cannot find user')
 
   // Extract relevant text from the idea
