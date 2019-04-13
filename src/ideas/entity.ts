@@ -22,7 +22,7 @@ export default class Idea extends BaseEntity {
   @ManyToOne(_type => User, user => user.ideas, { eager: true })
   user: User;
 
-  @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true })
+  @OneToOne(_type => AutoMatch, autoMatch => autoMatch.idea, { nullable: true, eager:true })
   autoMatch: AutoMatch;
 
   @CreateDateColumn({ type: "timestamp" })
