@@ -1,7 +1,8 @@
 import { JsonController, Get, Post, Put, Delete, Param, Body, NotFoundError, HttpCode, CurrentUser, } from 'routing-controllers'
 import Idea from './entity'
 import User from '../users/entity'
-import apiCheck from '../api/apiCheck';
+import { getRepository } from 'typeorm';
+// import apiCheck from '../api/apiCheck';
 
 
 
@@ -16,8 +17,14 @@ export default class IdeaController {
 
     if (!usr) throw new NotFoundError('Cannot find user')
     if (usr.role === 'expert') {
-      return Idea.find();
+
+      const idee = await getRepository(Idea)
+        .createQueryBuilder('idea')
+        .where(`idea.idea::json#>>'{2, answers, 1, qAnswer, value}' LIKE '${usr.industry}'`)
+        .getMany()
+      return idee
     }
+
     if (usr.role === 'admin') {
       return Idea.find();
     }
@@ -33,7 +40,8 @@ export default class IdeaController {
     let idea = await Idea.findOne(id);
     // let idd = idea!.idea[4].answers[0].qAnswer
 
-    apiCheck(idea)
+    console.log(idea)
+    // apiCheck(idea)
     return 'Doing API Check!'
   }
 

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, OneToOne, AfterInsert, ManyToOne, JoinColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, OneToOne, AfterInsert, ManyToOne, } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import Idea from '../ideas/entity';
 // import { apiCompareRequest } from '../emails/emailOptions';
@@ -19,7 +19,6 @@ export default class AutoMatch extends BaseEntity {
   autoMatch: JSON
 
   @OneToOne(_type => Idea, idea => idea.autoMatch, { nullable: true, onDelete: 'SET NULL' })
-  @JoinColumn()
   idea: Idea
 
   // @RelationId((idea: Idea) => idea.autoMatch)
