@@ -10,6 +10,7 @@ import Quest from './quest/entity';
 import Idea from './ideas/entity';
 import Upload from './files/entity';
 import AutoMatch from './api/entity';
+import Progress from './progress/entity';
 
 class CustomNamingStrategy extends DefaultNamingStrategy implements NamingStrategyInterface {
 
@@ -43,6 +44,7 @@ export default () =>
       Upload,
       Quest,
       AutoMatch,
+      Progress,
     ],
     synchronize: true,
     logging: true,

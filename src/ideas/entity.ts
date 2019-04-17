@@ -1,8 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, AfterInsert, OneToOne, JoinTable, } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsNotEmpty, } from 'class-validator'
 import User from '../users/entity';
 import AutoMatch from '../api/entity';
+import Progress from '../progress/entity';
 // import apiCheck from '../api/apiCheck';
 // import sendEmail from '../emails/sendEmail';
 // import { ideaConfirmation } from '../emails/emailOptions';
@@ -20,6 +21,10 @@ export default class Idea extends BaseEntity {
 
   @ManyToOne(_type => User, user => user.ideas, { eager: true })
   user: User;
+
+  @OneToOne(_type => Progress, progress => progress.idea, { nullable: false, })
+  @JoinTable()
+  progress: Progress;
 
   @OneToOne(_type => AutoMatch, automatch => automatch.idea, { nullable: true, })
   autoMatch: AutoMatch;

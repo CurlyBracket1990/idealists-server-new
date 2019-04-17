@@ -13,6 +13,7 @@ import IdeaController from "./ideas/controller";
 import UploadController from "./files/controller";
 import QuestController from "./quest/controller";
 import AutoMatchController from "./api/controller";
+import ProgressController from "./progress/controller";
 
 const port = process.env.PORT || 4000
 
@@ -29,6 +30,7 @@ const app = createExpressServer({
     UploadController,
     QuestController,
     AutoMatchController,
+    ProgressController,
   ],
   authorizationChecker: (action: Action) => {
     const header: string = action.request.headers.authorization
