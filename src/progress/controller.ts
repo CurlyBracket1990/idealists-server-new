@@ -1,41 +1,22 @@
-import { JsonController, Get, Post, Put, Param, Body, NotFoundError, HttpCode } from 'routing-controllers'
-import Group from './entity'
+import { JsonController, Get, Put, Param, Body, NotFoundError } from 'routing-controllers'
 import Progress from '../progress/entity';
-import Idea from '../ideas/entity';
 
 @JsonController()
 export default class ProgressController {
 
-  @Get("/ideas/:id/status")
+  @Get("/ideas/:id/progress")
   getAll(@Param("id") id: number,
   ) {
     return Progress.find({ where: { idea: id } });
   }
 
-  @Post("/ideas/:id/status")
-  @HttpCode(201)
-  post(
-    @Param("id") id: Idea,
-    @Body() status: Progress
-  ) {
-    const { idea, ...rest } = status
-    const entity = Progress.create(rest)
-    entity.idea = id
-    return entity.save()
-  }
-
-  @Put("/ideas/:id/status")
+  @Put("/ideas/:id/progress")
   async put(@Param("id") id: number,
     @Body() update: Partial<Progress>
   ) {
-    const group = await Progress.findOne({where: {idea:id}})
-    if (!group) throw new NotFoundError('Cannot find idea status')
+    const progress = await Progress.findOne({where: {idea:id}})
+    if (!progress) throw new NotFoundError('Cannot find idea status')
 
-    return Group.merge(group, update).save();
+    return Progress.merge(progress, update).save();
   }
-
-  // @Delete("/groups/:id")
-  // remove(@Param("id") id: number) {
-  //   return Group.delete(id);
-  // }
 }

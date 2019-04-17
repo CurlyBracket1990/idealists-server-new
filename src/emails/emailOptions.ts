@@ -13,3 +13,8 @@ export const apiCompareRequest = {
   plainBody: `Please review your idea with the results of the patent check`, // plain text body
   htmlBody: `Please review your idea with the results of the patent check`, // html body}
 }
+export const ideaUpdate = {
+  subject: `Your idea was updated`, // Subject line
+  plainBody: `The status of your idea was updated. Please check your dashboard for more details.`, // plain text body
+  htmlBody: `The status of your idea was updated. Please check your dashboard for more details.`, // html body}
+}
