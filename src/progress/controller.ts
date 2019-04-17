@@ -1,4 +1,4 @@
-import { JsonController, Get, Put, Param, Body, NotFoundError } from 'routing-controllers'
+import { JsonController, Get, Put, Param, Body, NotFoundError, Authorized } from 'routing-controllers'
 import Progress from '../progress/entity';
 
 @JsonController()
@@ -10,6 +10,7 @@ export default class ProgressController {
     return Progress.find({ where: { idea: id } });
   }
 
+  @Authorized()
   @Put("/ideas/:id/progress")
   async put(@Param("id") id: number,
     @Body() update: Partial<Progress>
