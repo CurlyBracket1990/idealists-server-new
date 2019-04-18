@@ -1,29 +1,31 @@
 import AutoMatch from "./entity";
-import Idea from "../ideas/entity";
-import { NotFoundError } from "routing-controllers";
-import User from "../users/entity";
 require('dotenv').config()
+// import Idea from "../ideas/entity";
+// import { NotFoundError } from "routing-controllers";
+// import User from "../users/entity";
 
 const request = require('superagent');
 const atmkey = process.env.AUTOMATCH_AUTH
 
-
 export default async function apiCheck(object) {
   // Find an idea
-  const idea = await Idea.findOne(object.id).catch(err => console.log(err))
-  if (!idea) throw new NotFoundError('Cannot find idea')
+  // const idea = await Idea.findOne(object.id).catch(err => console.log(err))
+  // if (!idea) throw new NotFoundError('Cannot find idea')
 
   // Find the user
-  const usr = await User.findOne(idea.user.id).catch(err => console.log(err))
-  if (!usr) throw new NotFoundError('Cannot find user')
+  // const usr = await User.findOne(idea.user.id).catch(err => console.log(err))
+  // if (!usr) throw new NotFoundError('Cannot find user')
 
   // Extract relevant text from the idea
-  let idd = idea.idea[4].answers[0].qAnswer
+  const idee = object.idea
+  let idd = idee[4].answers[0].qAnswer
 
   // Create new Automatch assign idea and user to it
-  const entry = new AutoMatch
-  entry.idea = idea
-  entry.user = usr
+  const entry = new AutoMatch()
+  // entry.idea = idea
+  // entry.user = usr
+  entry.idea = object
+  entry.user = object.user
 
   // Prepare JSON for AutoMatch
   const json = {
@@ -35,7 +37,7 @@ export default async function apiCheck(object) {
   request
     .post('https://api.auto-match.se/v2.1/search')
     .set('Authorization', atmkey)
-    .set('reference-number', usr.id)
+    .set('reference-number', object.user.id)
     .set('Content-Type', 'application/json')
     .send(json)
     .then(response => {

@@ -4,10 +4,10 @@ import { IsString, IsNotEmpty, IsEmail, MinLength, } from 'class-validator'
 import { Exclude } from 'class-transformer'
 import * as bcrypt from 'bcrypt'
 import Idea from '../ideas/entity';
-import Upload from '../files/entity';
 import sendEmail from '../emails/sendEmail'
 import { registrationEmail } from '../emails/emailOptions'
 import AutoMatch from '../api/entity';
+// import Upload from '../files/entity';
 
 export enum UserRole {
   ADMIN = "admin",
@@ -62,7 +62,7 @@ export default class User extends BaseEntity {
   @Column('text', { nullable: true })
   industry: string
 
-  @Column('text', { nullable: true })
+  @Column('text', { nullable: true, default: 'NL' })
   country: string
 
   @CreateDateColumn({ type: "timestamp" })
@@ -74,9 +74,8 @@ export default class User extends BaseEntity {
   @OneToMany(_type => AutoMatch, autoMatch => autoMatch.user, { nullable: true, onDelete: 'CASCADE', })
   autoMatch: AutoMatch[];
 
-  @OneToMany(_type => Upload, uploads => uploads.user, { nullable: true })
-  uploads: Upload[];
-
+  // @OneToMany(_type => Upload, uploads => uploads.user, { nullable: true })
+  // uploads: Upload[];
 
   @AfterInsert()
   sendEmail() {

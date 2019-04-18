@@ -5,9 +5,9 @@ import User from '../users/entity';
 import AutoMatch from '../api/entity';
 import Progress from '../progress/entity';
 import { createEntry } from '../progress/updateProgress';
-// import apiCheck from '../api/apiCheck';
-// import sendEmail from '../emails/sendEmail';
-// import { ideaConfirmation } from '../emails/emailOptions';
+import apiCheck from '../api/apiCheck';
+import sendEmail from '../emails/sendEmail';
+import { ideaConfirmation } from '../emails/emailOptions';
 
 
 @Entity()
@@ -36,8 +36,8 @@ export default class Idea extends BaseEntity {
   @AfterInsert()
   async checkIdea() {
     createEntry(this)
-    // apiCheck(this.idea)
+    apiCheck(this)
     // const usr = await User.findOne(this.user)
-    // sendEmail(usr!.email, ideaConfirmation).catch(console.error)
+    sendEmail(this.user.email, ideaConfirmation).catch(console.error)
   }
 }

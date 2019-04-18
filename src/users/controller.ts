@@ -4,11 +4,13 @@ import User from './entity'
 @JsonController()
 export default class UserController {
 
+  @Authorized()
   @Get("/users")
   getAll() {
     return User.find();
   }
 
+  @Authorized()
   @Get("/users/:id")
   getOne(
     @Param("id") id: number
@@ -51,6 +53,7 @@ export default class UserController {
     return user.save();
   }
 
+  @Authorized()
   @Delete("/users/:id")
   remove(@Param("id") id: number) {
     return User.delete(id);

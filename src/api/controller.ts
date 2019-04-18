@@ -4,7 +4,6 @@ import AutoMatch from './entity'
 // import User from '../users/entity'
 
 
-
 @JsonController()
 export default class AutoMatchController {
 
@@ -13,25 +12,24 @@ export default class AutoMatchController {
   //   return AutoMatch.find();
   // }
 
-  @Get("/idea/:id/automatch")
+  @Get("/ideas/:id/automatch")
   getIt(
     @Param("id") id: number
   ) {
-    console.log(id)
     return AutoMatch.findOne({ where: { idea: id } });
   }
 
-  @Get("/automatch")
-  getAll() {
-    return AutoMatch.find();
-  }
+  // @Get("/automatch")
+  // getAll() {
+  //   return AutoMatch.find();
+  // }
 
-  @Get("/automatch/:id")
-  getOne(
-    @Param("id") id: number
-  ) {
-    return AutoMatch.findOne(id);
-  }
+  // @Get("/automatch/:id")
+  // getOne(
+  //   @Param("id") id: number
+  // ) {
+  //   return AutoMatch.findOne(id);
+  // }
 
   // @Post("/automatch")
   // save(

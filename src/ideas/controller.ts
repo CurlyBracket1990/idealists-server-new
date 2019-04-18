@@ -4,8 +4,6 @@ import User from '../users/entity'
 import { getRepository } from 'typeorm';
 // import apiCheck from '../api/apiCheck';
 
-
-
 @JsonController()
 export default class IdeaController {
 
@@ -17,33 +15,27 @@ export default class IdeaController {
 
     if (!usr) throw new NotFoundError('Cannot find user')
     if (usr.role === 'expert') {
-
       const idee = await getRepository(Idea)
         .createQueryBuilder('idea')
         .where(`idea.idea::json#>>'{2, answers, 1, qAnswer, value}' LIKE '${usr.industry}'`)
         .getMany()
       return idee
     }
-
     if (usr.role === 'admin') {
       return Idea.find();
     }
     return Idea.find({ where: { user: userId } });
-
     // Ideas will be public or private in the future for public to evaluate/comment
   }
 
-  @Get("/ideas/:id/description")
-  async getIt(
-    @Param("id") id: number
-  ) {
-    let idea = await Idea.findOne(id);
-    // let idd = idea!.idea[4].answers[0].qAnswer
-
-    console.log(idea)
-    // apiCheck(idea)
-    return 'Doing API Check!'
-  }
+  // @Get("/ideas/:id/description")
+  // async getIt(
+  //   @Param("id") id: number
+  // ) {
+  //   let idea = await Idea.findOne(id);
+  //   apiCheck(idea)
+  //   return 'Doing API Check!'
+  // }
 
   @Get("/ideas/:id")
   getOne(
@@ -70,7 +62,6 @@ export default class IdeaController {
   ) {
     const idea = await Idea.findOne(id)
     if (!idea) throw new NotFoundError('Cannot find page')
-
     return Idea.merge(idea, update).save();
   }
 

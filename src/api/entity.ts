@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, OneToOne, AfterInsert, ManyToOne, JoinColumn, } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import Idea from '../ideas/entity';
-// import { apiCompareRequest } from '../emails/emailOptions';
-// import sendEmail from '../emails/sendEmail';
+import { apiCompareRequest } from '../emails/emailOptions';
+import sendEmail from '../emails/sendEmail';
 import User from '../users/entity';
 
 
@@ -30,7 +30,6 @@ export default class AutoMatch extends BaseEntity {
 
   @AfterInsert()
   async compareAutoMatchResults() {
-
-    // sendEmail(usr!.email, apiCompareRequest).catch(console.error)
+    sendEmail(this.user.email, apiCompareRequest).catch(console.error)
   }
 }

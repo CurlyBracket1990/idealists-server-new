@@ -6,14 +6,14 @@ import { verify } from './auth/jwt'
 import UserController from './users/controller'
 import LoginController from "./auth/login";
 import ResetPasswordController from "./auth/resetpass";
-import SurveyController from "./surveys/controller";
-import GroupController from "./groups/controller";
-import QuestionController from "./questions/controller";
 import IdeaController from "./ideas/controller";
-import UploadController from "./files/controller";
-import QuestController from "./quest/controller";
 import AutoMatchController from "./api/controller";
 import ProgressController from "./progress/controller";
+import QuestController from "./quest/controller";
+// import SurveyController from "./surveys/controller";
+// import GroupController from "./groups/controller";
+// import QuestionController from "./questions/controller";
+// import UploadController from "./files/controller";
 
 const port = process.env.PORT || 4000
 
@@ -23,14 +23,14 @@ const app = createExpressServer({
     UserController,
     LoginController,
     ResetPasswordController,
-    SurveyController,
-    GroupController,
-    QuestionController,
     IdeaController,
-    UploadController,
-    QuestController,
     AutoMatchController,
     ProgressController,
+    QuestController,
+    // SurveyController,
+    // GroupController,
+    // QuestionController,
+    // UploadController,
   ],
   authorizationChecker: (action: Action) => {
     const header: string = action.request.headers.authorization
@@ -52,7 +52,7 @@ const app = createExpressServer({
   },
 });
 
-// Timer
+// Timer for later implementation
 // const job = new CronJob('0 */30 * * * *', function () {
 //   const d = new Date();
 //   console.log('Every 30 mins:', d);
