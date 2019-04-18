@@ -27,7 +27,7 @@ export default async function apiCheck(object) {
 
   // Prepare JSON for AutoMatch
   const json = {
-    "query": idd, // "Technology which enables a trackpad or touchscreen to recognize more than one or more than two points of contact with the display.",
+    "query": idd,
     "requested-hits": "10",
     "view": "bibliographic,passage"
   }
@@ -42,12 +42,7 @@ export default async function apiCheck(object) {
       entry.ticket = response.body.data
       return entry.save()
     })
-    // getResults waits 60 seconds and retrieves & saves results
-    .then(atm => getResults(atm))
-    // .then(rsp => {
-    //   const update = { autoMatch: rsp }
-    //   return Idea.merge(idea, update).save()
-    // })
+    .then(atm => getResults(atm))  // getResults waits 60 seconds and retrieves & saves results
     .catch(error => console.log(error))
 }
 
@@ -59,9 +54,7 @@ async function getResults(atm) {
         .set('Authorization', atmkey)
         .then(response => {
           const patents = { autoMatch: response.body.data } // response.body.data['automatch-results']['index-1'] }
-          console.log('MY MASSIVE RESPONSE', response.body.data)
           return AutoMatch.merge(atm, patents).save()
-          // entry.autoMatch = response.body.data['automatch-results']['index-1']
         })
         .catch(error => console.log(error))
     },

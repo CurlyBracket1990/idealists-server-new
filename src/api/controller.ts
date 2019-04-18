@@ -8,6 +8,19 @@ import AutoMatch from './entity'
 @JsonController()
 export default class AutoMatchController {
 
+  // @Get("/automatch")
+  // getAll() {
+  //   return AutoMatch.find();
+  // }
+
+  @Get("/idea/:id/automatch")
+  getIt(
+    @Param("id") id: number
+  ) {
+    console.log(id)
+    return AutoMatch.findOne({ where: { idea: id } });
+  }
+
   @Get("/automatch")
   getAll() {
     return AutoMatch.find();

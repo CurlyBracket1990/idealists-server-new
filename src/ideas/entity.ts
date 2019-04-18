@@ -23,12 +23,11 @@ export default class Idea extends BaseEntity {
   @ManyToOne(_type => User, user => user.ideas, { eager: true })
   user: User;
 
-  @OneToOne(_type => Progress, progress => progress.idea, { })
+  @OneToOne(_type => Progress, progress => progress.idea, { eager: true })
   @JoinColumn()
   progress: Progress;
-  
-  @OneToOne(_type => AutoMatch, automatch => automatch.idea, { })
-  @JoinColumn()
+
+  @OneToOne(_type => AutoMatch, automatch => automatch.idea, {})
   autoMatch: AutoMatch;
 
   @CreateDateColumn({ type: "timestamp" })

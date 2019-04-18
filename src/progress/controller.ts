@@ -15,9 +15,8 @@ export default class ProgressController {
   async put(@Param("id") id: number,
     @Body() update: Partial<Progress>
   ) {
-    const progress = await Progress.findOne({where: {idea:id}})
+    const progress = await Progress.findOne({ where: { idea: id } })
     if (!progress) throw new NotFoundError('Cannot find idea status')
-
     return Progress.merge(progress, update).save();
   }
 }
