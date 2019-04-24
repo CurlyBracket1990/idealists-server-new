@@ -1,7 +1,9 @@
 # Idealists
 
 This is the back end of Idealists platform for collecting and validating ideas. It provides an API with user login functionality, dynamic questionaire and answers saving (as JSON) and file upload functionality. You can find list of endpoints further in this document. 
-Security is very poorly implemented since the app was not finished completely/left in development mode. The basis for security implementation however is good and it can be easily applied.  
+Security is very poorly implemented since the app was not finished completely/left in development mode. The basis for security implementation however is good and it can be easily applied. 
+
+**If you would like to review the code please contact me on crvicek@yahoo.com**
 
 ## Technologies used
 - Node.js
@@ -15,18 +17,48 @@ Security is very poorly implemented since the app was not finished completely/le
 ## Install instructions
 clone, npm install, run docker/postgres on 5432, npm run start
 
-## Endpoints
+## Functionality
+### Email notification is sent:
+* when new user registers
+* when new idea is submitted
+* when automatch results are ready for user review
+* when status of the idea changes
+It is possible to make templates for the emails and use the template name in the sendEmail function (look emailOptions.ts).
 
+### Automatch:
+* on idea submission server sends detailed idea description to ipscreener patent checker API, saves the returned ticket, waits a minute and requests the result with the ticket. The current setup on the front end required that the structure of the idea object is "` object.['idea'][4]['answers'][0]['qAnswer'] `". Optimisation of this is neccesary and should be done together with the front end.
+
+### Security:
+All requests (except user post and login) should be done with the authorization header "Bearer _token_". Token is returned when valid email and password are posted to /login.
+
+## Endpoints
 ### User
 When a new user registers a confirmation email is send to user's email.
-- **@Post('/login')** returns a JWT when user logs in with
+- **@Post('/login')** returns a JWT when user logs in with a valid email and password
 - **@Get("/current")** return the user info based on provided authorization header
 - **@Get("/users")**
+- **@Post("/users")** user should have: {firstName:'', lastName:'', email:'', password:''
 - **@Get("/users/:id")**
 - **@Put("/users/:id")**
 - **@Delete("/users/:id")**
 
-### Questionaire
+### Ideas
+Idea (answers to the questions) is also saved as JSON,
+When new idea is submitted server sends request to AutoMatch API for idea validation - partially implemented
+- **@Get("/ideas")** returns ideas based on user role:
+  - admin: all ideas,
+  - expert: ideas matching the industry,
+  - normal user: their own ideas
+- **@Get("/ideas/:id")**
+- **@Post("/ideas")**
+- **@Put("/ideas/:id")**
+- **@Delete("/ideas/:id")**
+
+### Automatch
+After new idea is submitted, automatch is accesible within couple of minutes through
+- **@Get("/ideas/:id/automatch")**
+
+### Questionaire - Not used in the front end atm
 All the questions are saved as JSON
 - **@Get("/quest")**
 - **@Get("/quest/:id")**
@@ -34,57 +66,8 @@ All the questions are saved as JSON
 - **@Put("/quest/:id")**
 - **@Delete("/quest/:id")**
 
-### Ideas
-Idea (answers to the questions) is also saved as JSON,
-When new idea is submitted server sends request to AutoMatch API for idea validation - partially implemented
-- **@Get("/ideas")**
-- **@Get("/ideas/:id")**
-- **@Post("/ideas")**
-- **@Put("/ideas/:id")**
-- **@Delete("/ideas/:id")**
-
-### Automatch - partially implemented
-When new idea is submitted, API sends request to mock-api (returns the same result form as the real AutoMatch) and saves the response in DB. These responses are available through:
-- **@Get("/automatch")**
-- **@Get("/automatch/:id")**
-
-### File upload
-Form for uploading files should have these params: 
-
-```
-<form action=".../upload" enctype="multipart/form-data" method="POST">
-  <input type="file" name="UserFile" id="UserFile" required />
-  <input type="submit" value="Upload" />
-</form> 
-```
-
-- **@Get("/upload")**
-- **@Get("/upload/:id")**
-- **@Post("/upload")**
-- **@Delete("/upload/:id")**
-
-
-### Survey -> NOT USED IN CLIENT DUE TO LATER ADAPTATIONS
-- **@Get("/surveys")**
-- **@Get("/surveys/:id")**
-- **@Post("/surveys")**
-- **@Put("/surveys/:id")**
-- **@Delete("/surveys/:id")**
-
-### Groups -> NOT USED IN CLIENT DUE TO LATER ADAPTATIONS
-- **@Get("/surveys/:surveyId/groups")**
-- **@Get("groups/:id")**
-- **@Post("/surveys/:surveyId/groups")**
-- **@Put("/groups/:id")**
-- **@Delete("/groups/:id")**
-
-### Questions -> NOT USED IN CLIENT DUE TO LATER ADAPTATIONS
-- **@Get("/groups/:id/questions")**
-- **@Get("/questions/:id")**
-- **@Post("/groups/:groupId/questions")**
-- **@Put("/questions/:id")**
-- **@Delete("/questions/:id")**
-
+## Deployment
+The app is deployed on Heroku. To get the link please get in touch.
 
 
 _For more info you can contact me on crvicek@yahoo.com_
