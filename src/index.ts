@@ -9,6 +9,7 @@ import ResetPasswordController from "./auth/resetpass";
 import IdeaController from "./ideas/controller";
 import AutoMatchController from "./api/controller";
 import ProgressController from "./progress/controller";
+import QuestController from "./quest/controller";
 
 const port = process.env.PORT || 4000
 
@@ -21,6 +22,7 @@ const app = createExpressServer({
     IdeaController,
     AutoMatchController,
     ProgressController,
+    QuestController,
   ],
   authorizationChecker: (action: Action) => {
     const header: string = action.request.headers.authorization

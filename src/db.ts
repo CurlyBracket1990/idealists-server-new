@@ -6,6 +6,7 @@ import User from './users/entity';
 import Idea from './ideas/entity';
 import AutoMatch from './api/entity';
 import Progress from './progress/entity';
+import Quest from './quest/entity';
 
 class CustomNamingStrategy extends DefaultNamingStrategy implements NamingStrategyInterface {
 
@@ -35,6 +36,7 @@ export default () =>
       Idea,
       AutoMatch,
       Progress,
+      Quest,
     ],
     synchronize: true,
     logging: true,
