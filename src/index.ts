@@ -9,11 +9,6 @@ import ResetPasswordController from "./auth/resetpass";
 import IdeaController from "./ideas/controller";
 import AutoMatchController from "./api/controller";
 import ProgressController from "./progress/controller";
-import QuestController from "./quest/controller";
-// import SurveyController from "./surveys/controller";
-// import GroupController from "./groups/controller";
-// import QuestionController from "./questions/controller";
-// import UploadController from "./files/controller";
 
 const port = process.env.PORT || 4000
 
@@ -26,11 +21,6 @@ const app = createExpressServer({
     IdeaController,
     AutoMatchController,
     ProgressController,
-    QuestController,
-    // SurveyController,
-    // GroupController,
-    // QuestionController,
-    // UploadController,
   ],
   authorizationChecker: (action: Action) => {
     const header: string = action.request.headers.authorization
