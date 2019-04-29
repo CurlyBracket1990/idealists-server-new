@@ -37,7 +37,8 @@ export default class Idea extends BaseEntity {
   async checkIdea() {
     createEntry(this)
     apiCheck(this)
-    // const usr = await User.findOne(this.user)
-    sendEmail(this.user.email, ideaConfirmation).catch(console.error)
+    const usr = await User.findOne(this.user)
+    sendEmail(usr!.email, ideaConfirmation).catch(console.error)
+
   }
 }
