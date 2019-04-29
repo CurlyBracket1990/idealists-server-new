@@ -4,8 +4,8 @@ require('dotenv').config()
 // import { NotFoundError } from "routing-controllers";
 // import User from "../users/entity";
 
-// const request = require('superagent');
-// const atmkey = process.env.AUTOMATCH_AUTH
+const request = require('superagent');
+const atmkey = process.env.AUTOMATCH_AUTH
 
 export default async function apiCheck(object) {
   // Find an idea
@@ -33,34 +33,33 @@ export default async function apiCheck(object) {
     "requested-hits": "10",
     "view": "bibliographic,passage"
   }
-  console.log('MYJAAAAIIISSSUUUNN', json)
 
-//   request
-//     .post('https://api.auto-match.se/v2.1/search')
-//     .set('Authorization', atmkey)
-//     .set('reference-number', object.user.id)
-//     .set('Content-Type', 'application/json')
-//     .send(json)
-//     .then(response => {
-//       entry.ticket = response.body.data
-//       return entry.save()
-//     })
-//     // .then(atm => getResults(atm))  // getResults waits 60 seconds and retrieves & saves results
-//     .catch(error => console.log(error))
-// }
+  request
+    .post('https://api.auto-match.se/v2.1/search')
+    .set('Authorization', atmkey)
+    .set('reference-number', object.user.id)
+    .set('Content-Type', 'application/json')
+    .send(json)
+    .then(response => {
+      entry.ticket = response.body.data
+      return entry.save()
+    })
+    .then(atm => getResults(atm))  // getResults waits 60 seconds and retrieves & saves results
+    .catch(error => console.log(error))
+}
 
-// async function getResults(atm) {
-//   setTimeout(
-//     () => {
-//       request
-//         .get(`https://api.auto-match.se/v2.1/search?ticket=${atm.ticket}`)
-//         .set('Authorization', atmkey)
-//         .then(response => {
-//           const patents = { autoMatch: response.body.data } // response.body.data['automatch-results']['index-1'] }
-//           return AutoMatch.merge(atm, patents).save()
-//         })
-//         .catch(error => console.log(error))
-//     },
-//     1000 * 60 // Wait 1 minute for automatch to calculate results
-//   )
+async function getResults(atm) {
+  setTimeout(
+    () => {
+      request
+        .get(`https://api.auto-match.se/v2.1/search?ticket=${atm.ticket}`)
+        .set('Authorization', atmkey)
+        .then(response => {
+          const patents = { autoMatch: response.body.data } // response.body.data['automatch-results']['index-1'] }
+          return AutoMatch.merge(atm, patents).save()
+        })
+        .catch(error => console.log(error))
+    },
+    1000 * 60 // Wait 1 minute for automatch to calculate results
+  )
 }
