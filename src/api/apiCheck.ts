@@ -31,13 +31,13 @@ export default async function apiCheck(object) {
   const json = {
     "query": idd,
     "requested-hits": "10",
-    "view": "bibliographic,passage"
+    "view": "bibliographic,passage,pdf"
   }
 
   request
     .post('https://api.auto-match.se/v2.1/search')
     .set('Authorization', atmkey)
-    .set('reference-number', object.user.id)
+    .set('reference-number', object.user)
     .set('Content-Type', 'application/json')
     .send(json)
     .then(response => {
