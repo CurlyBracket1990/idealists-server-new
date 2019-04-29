@@ -44,10 +44,11 @@ const app = createExpressServer({
   },
 });
 
+
 // Timer for later implementation
 // const job = new CronJob('0 */30 * * * *', function () {
-//   const d = new Date();
-//   console.log('Every 30 mins:', d);
+  const d = new Date();
+  console.log('Time:', d);
 // });
 // job.start();
 

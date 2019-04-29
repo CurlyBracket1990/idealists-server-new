@@ -10,13 +10,13 @@ export default async function sendEmail(receivers, options) {
   // console.log('I run');
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    // host: "smtp.hostnet.nl",
-    // port: 587,
-    // secure: false, // true for 465, false for other ports
-    // auth: {
-    //   user: 'support@the-idealists.com',
-    //   pass: process.env.MAIL_PASS
-    // },
+    host: "smtp.hostnet.nl",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: 'support@the-idealists.com',
+      pass: process.env.MAIL_PASS
+    },
     logger: true,
   });
 
