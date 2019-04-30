@@ -11,7 +11,7 @@ export default class Progress extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @OneToOne(_type => Idea, idea => idea.progress)
+  @OneToOne(_type => Idea, idea => idea.progress, { onDelete: 'CASCADE' })
   idea: Idea;
 
   @UpdateDateColumn()

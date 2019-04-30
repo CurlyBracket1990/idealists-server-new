@@ -20,14 +20,14 @@ export default class Idea extends BaseEntity {
   @Column('jsonb', { nullable: true })
   idea: JSON
 
-  @ManyToOne(_type => User, user => user.ideas, { eager: true })
+  @ManyToOne(_type => User, user => user.ideas, { eager: true, onDelete: 'SET NULL' })
   user: User;
 
-  @OneToOne(_type => Progress, progress => progress.idea, { eager: true })
+  @OneToOne(_type => Progress, progress => progress.idea, { eager: true, onDelete: 'CASCADE' })
   @JoinColumn()
   progress: Progress;
 
-  @OneToOne(_type => AutoMatch, automatch => automatch.idea, {})
+  @OneToOne(_type => AutoMatch, automatch => automatch.idea, { onDelete: 'CASCADE' })
   autoMatch: AutoMatch;
 
   @CreateDateColumn({ type: "timestamp" })
