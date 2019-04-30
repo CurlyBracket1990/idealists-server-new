@@ -11,11 +11,15 @@ export default async function sendEmail(receivers, options) {
   // console.log('I run');
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.hostnet.nl",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    // host: "smtp.hostnet.nl",
+    // port: 587,
+    // secure: false, // true for 465, false for other ports
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use SSL
     auth: {
-      user: 'support@the-idealists.com',
+      user: 'dogdoggerwoof@gmail.com',
+      // user: 'support@the-idealists.com',
       pass: process.env.MAIL_PASS
     },
     logger: true,
@@ -23,7 +27,8 @@ export default async function sendEmail(receivers, options) {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"The Idealists" <support@the-idealists.com>', // sender address
+    from: '"The Idealists" <dogdoggerwoof@gmail.com>', // sender address
+    // from: '"The Idealists" <support@the-idealists.com>', // sender address
     to: receivers, // list of receivers
     subject: options.subject, // Subject line
     text: options.plainBody, // plain text body
