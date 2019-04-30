@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken'
-require('dotenv').config()
+// require('dotenv').config()
 
 const secret = process.env.JWT_SECRET
 const ttl = 3600 * 4 // our JWT tokens are valid for 4 hours
