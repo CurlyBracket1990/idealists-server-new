@@ -30,6 +30,7 @@ export default class AutoMatch extends BaseEntity {
 
   @AfterInsert()
   async compareAutoMatchResults() {
-    sendEmail(this.user.email, apiCompareRequest).catch(console.error)
+    const usr = await User.findOne(this.user)
+    sendEmail(usr!.email, apiCompareRequest).catch(console.error)
   }
 }

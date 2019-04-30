@@ -1,5 +1,5 @@
 import AutoMatch from "./entity";
-require('dotenv').config()
+// require('dotenv').config()
 // import Idea from "../ideas/entity";
 // import { NotFoundError } from "routing-controllers";
 // import User from "../users/entity";
